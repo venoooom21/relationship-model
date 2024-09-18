@@ -1,0 +1,56 @@
+Gymnasium
+
+Gym_ID (Primary Key)
+Name
+Address
+Phone number
+Member
+
+Member_ID (Primary Key, Unique Identifier)
+Last name
+First name
+Address
+Date of birth
+Gender
+Gym_ID (Foreign Key to Gymnasium)
+Session
+
+Session_ID (Primary Key)
+Type of sport
+Schedule (Date & Time)
+Maximum capacity (20 members)
+Gym_ID (Foreign Key to Gymnasium)
+Coach
+
+Coach_ID (Primary Key)
+Last name
+First name
+Age
+Specialty
+Gym_ID (Foreign Key to Gymnasium)
+Registration
+
+Registration_ID (Primary Key)
+Member_ID (Foreign Key to Member)
+Session_ID (Foreign Key to Session)
+Registration Date
+Coach_Assignment
+
+Coach_Assignment_ID (Primary Key)
+Coach_ID (Foreign Key to Coach)
+Session_ID (Foreign Key to Session)
+Relationships
+Gymnasium has many Members.
+Gymnasium has many Sessions.
+Gymnasium has many Coaches.
+Member registers for many Sessions, and each Session can have many Members (Many-to-Many Relationship through Registration).
+Session is led by up to two Coaches (Many-to-Many Relationship through Coach_Assignment).
+ER Diagram Components
+Primary Keys are underlined.
+Foreign Keys will connect the entities.
+ER Model Breakdown
+Gymnasium ↔ Members: One-to-Many (A gym has multiple members).
+Gymnasium ↔ Sessions: One-to-Many (A gym organizes multiple sessions).
+Gymnasium ↔ Coaches: One-to-Many (A gym employs multiple coaches).
+Members ↔ Sessions: Many-to-Many (A member can register for many sessions, and a session can have many members).
+Sessions ↔ Coaches: Many-to-Many (A session is led by one or two coaches, and a coach can lead multiple sessions).
